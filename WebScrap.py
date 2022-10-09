@@ -6,7 +6,7 @@ import openpyxl
 
 tic = datetime.datetime.now()
 
-workbook = openpyxl.load_workbook('C:/Users/dmore/Downloads/listado2.xlsx')
+workbook = openpyxl.load_workbook('./listado2.xlsx')
 
 if 'Todos' not in workbook.sheetnames:
     ws = workbook.create_sheet(title='Todos', index = 0)
@@ -214,5 +214,5 @@ tic = datetime.datetime.now()-tic
 print('Revisados {} autos en {}'.format(n,tic))
 wsc.append(['Revisados {} autos en {}'.format(n,tic)])
 
-workbook.save(filename = 'C:/Users/dmore/Downloads/listado2.xlsx')
+workbook.save(filename = './listado2.xlsx')
 workbook.close()
